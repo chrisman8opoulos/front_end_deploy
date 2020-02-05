@@ -1,0 +1,31 @@
+<div class="col-md-12 user-container">
+  <h2 style="margin: auto"> User Details</h2>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Username</th>
+      <th>Όνομα</th>
+      <th>Επώνυμο</th>
+      <th>Τμήμα</th>
+      <th>Διέυθυνση</th>
+      <th>Τηλέφωνο</th>
+      <th>Ενεργός</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{user.username}}</td>
+      <td>{{user.firstName}}</td>
+      <td>{{user.lastName}}</td>
+      <td>{{user.department}}</td>
+      <td>{{user.address}}</td>
+      <td>{{user.phone}}</td>
+      <td>{{user.activate}}</td>
+      <td>
+        <button *ngIf="!user.activate" class="btn btn-success" (click)="activeUser(user)" style="margin-left: 18px;">Ενεργοποίηση</button>
+        <button *ngIf="user.activate" class="btn btn-success" (click)="dActiveUser(user)" style="margin-left: 18px;">Απενεργοποίηση</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,64 @@
+<div class="col-md-10 offset-md-2 mt-2">
+    <div class="alert alert-info">
+        <strong>Δηλώνω ρητά και υπεύθυνα ότι κάθε στοιχείο που καταχωρώ είναι
+          ακριβές και αληθές. Με δική μου ευθύνη να ενημερώνω και να
+          επικαιροποιω τα καταχωρισμένα στοιχεία για τυχόν αλλαγές </strong> <br />
+    </div>
+    <div class="card">
+        <h4 class="card-header">Αιτηση για στεγαση</h4>
+        <div class="card-body">
+            <form [formGroup]="homeForm" (ngSubmit)="onSubmit()" *ngIf="active">
+                <div class="form-group">
+                    <label for="income">Εισόδημα</label>
+                    <input type="text" formControlName="income" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.income.errors }" />
+                    <div *ngIf="submitted && f.income.errors" class="invalid-feedback">
+                        <div *ngIf="f.username.errors.required">απαραιτητο πεδιο</div>
+                    </div>
+                </div>
+              <div class="form-group">
+              <label>Άνεργοι γονείς: </label>
+              <select (change)="selectChangeHandler($event)">
+                <option value="">Επιλογή</option>
+                <option value="0">Κανεις</option>
+                <option value="1">Ένας</option>
+                <option value="2">Δύο</option>
+              </select>
+            </div>
+            <div class="form-group">
+                <label for="childOut">Αριθμος αδερφιών που σπουδαζουν σε άλλη Πόλη</label>
+                <input type="text" formControlName="childOut" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.childOut.errors }" />
+                <div *ngIf="submitted && f.childOut.errors" class="invalid-feedback">
+                    <div *ngIf="f.childOut.errors.required">απαραιτητο πεδιο</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="childIn">Αριθμος αδερφιών που σπουδαζουν στην ιδια Πόλη</label>
+                <input type="text" formControlName="childIn" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.childIn.errors }" />
+                <div *ngIf="submitted && f.childIn.errors" class="invalid-feedback">
+                    <div *ngIf="f.childIn.errors.required">απαραιτητο πεδιο</div>
+                </div>
+            </div>
+          
+            <div class="form-group">
+                <label for="years">συνολο χρώνω διαμονείς στις Εστίες</label>
+                <input type="text" formControlName="years" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.years.errors }" />
+                <div *ngIf="submitted && f.years.errors" class="invalid-feedback">
+                    <div *ngIf="f.years.errors.required">απαραιτητο πεδιο</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="yearsStudy">Έτος φοιτησεις</label>
+                <input type="text" formControlName="yearsStudy" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.yearsStudy.errors }" />
+                <div *ngIf="submitted && f.yearsStudy.errors" class="invalid-feedback">
+                    <div *ngIf="f.yearsStudy.errors.required">απαραιτητο πεδιο</div>
+                </div>
+            </div>
+            <button [disabled]="loading" class="btn btn-primary">
+                <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                Send
+            </button>
+            <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+        </form>
+    </div>
+  </div>
+</div>

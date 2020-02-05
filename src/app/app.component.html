@@ -1,0 +1,26 @@
+﻿<!-- nav -->
+<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
+    <div class="navbar-nav">
+        <a class="nav-item nav-link" routerLink="/">Κεντρική Σελίδα</a>
+        <a class="nav-item nav-link" routerLink="/admin" *ngIf="isAdmin">Διαχειριστής</a>
+        <a class="nav-item nav-link" routerLink="/user" *ngIf="isUser">Φοιτητής</a>
+        <a class="nav-item nav-link" routerLink="/supervisior" *ngIf="isSupervisior">Προϊστάμενος</a>
+        <a class="nav-item nav-link" routerLink="/subsistent" *ngIf="isSubsistent">Υφιστάμενος</a>
+        <a class="nav-item nav-link" (click)="logout()">Αποσύνδεδη</a>
+    </div>
+</nav>
+
+<!-- main app container -->
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
+
+<!-- credits -->
+<div class="text-center mt-4">
+    <p>
+        <a href="https://www.hua.gr/index.php/el/" target="_top">Χαροκόπειο Πανεπιστήμιο</a>
+    </p>
+    <p>
+        <a href="https://www.hua.gr/index.php/el/administration-3/departments-secretariats" target="_top">Γραμματείες Τμημάτων</a>
+    </p>
+</div>

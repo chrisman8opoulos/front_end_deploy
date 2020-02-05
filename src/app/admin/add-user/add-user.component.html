@@ -1,0 +1,78 @@
+<div class="col-md-10 offset-md-2 mt-2">
+    <div class="alert alert-info">
+        <strong>Admin </strong> Panel <br />
+    </div>
+    <div class="card">
+        <h4 class="card-header">Εγραφή χρήστη</h4>
+        <div class="card-body">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+              <div class="form-group">
+                  <label for="username">Username</label>
+                  <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                  <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                      <div *ngIf="f.username.errors.required">Username is required</div>
+                  </div>
+              </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required">Password is required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="name">Όνομα</label>
+                    <input type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+                    <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                        <div *ngIf="f.name.errors.required">Password is required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Επώνυμο</label>
+                    <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                    <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                        <div *ngIf="f.lastName.errors.required">Password is required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                <label>Παράρτημα: </label>
+                <select (change)="selectDeparture($event)">
+                  <option value="">Επιλογή</option>
+                  <option value="1">1 Παράρτημα</option>
+                  <option value="2">2 Παραρτημα</option>
+                  <option value="3">3 Παραρτημα</option>
+                </select>
+              </div>
+                <div class="form-group">
+                    <label for="address">Διεύθυνση</label>
+                    <input type="text" formControlName="address" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.address.errors }" />
+                    <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
+                        <div *ngIf="f.address.errors.required">Password is required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Τηλέφωνο</label>
+                    <input type="text" formControlName="phone" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
+                    <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                        <div *ngIf="f.phone.errors.required">Password is required</div>
+                    </div>
+                </div>
+              <div class="form-group">
+              <label>Δικαιώμα: </label>
+              <select (change)="selectRights($event)">
+                <option value="">Επιλογή</option>
+                <option value="admin">Διαχειριστλης</option>
+                <option value="supervisior">Προιστάμενος</option>
+                <option value="subsistent">Υφιστάμενος</option>
+                <option value="user">Φοιτητης</option>
+              </select>
+            </div>
+            <button [disabled]="loading" class="btn btn-primary">
+                <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                Εγγραφή
+            </button>
+            <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+        </form>
+    </div>
+  </div>
+</div>

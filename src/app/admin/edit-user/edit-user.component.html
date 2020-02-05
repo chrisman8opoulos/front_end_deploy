@@ -1,0 +1,70 @@
+<div class="col-md-6 user-container">
+  <h2 class="text-center">Edit User</h2>
+  <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+    <div class="hidden">
+      <input readonly="readonly" type="text" formControlName="id" placeholder="id" name="id" class="form-control" id="id">
+    </div>
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+            <div *ngIf="f.username.errors.required">Username is required</div>
+        </div>
+    </div>
+      <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+              <div *ngIf="f.password.errors.required">Password is required</div>
+          </div>
+      </div>
+      <div class="form-group">
+          <label for="firstName">Όνομα</label>
+          <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+          <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+              <div *ngIf="f.firstName.errors.required">Password is required</div>
+          </div>
+      </div>
+      <div class="form-group">
+          <label for="lastName">Επώνυμο</label>
+          <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+          <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+              <div *ngIf="f.lastName.errors.required">Password is required</div>
+          </div>
+      </div>
+      <div class="form-group">
+      <label>Παράρτημα: </label>
+      <select formControlName="department" (change)="selectDeparture($event)">
+        <option value="">Επιλογή</option>
+        <option value="one">1 Παράρτημα</option>
+        <option value="two">2 Παραρτημα</option>
+        <option value="three">3 Παραρτημα</option>
+      </select>
+    </div>
+      <div class="form-group">
+          <label for="address">Διεύθυνση</label>
+          <input type="text" formControlName="address" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.address.errors }" />
+          <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
+              <div *ngIf="f.address.errors.required">Password is required</div>
+          </div>
+      </div>
+      <div class="form-group">
+          <label for="phone">Τηλέφωνο</label>
+          <input type="text" formControlName="phone" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
+          <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+              <div *ngIf="f.phone.errors.required">Password is required</div>
+          </div>
+      </div>
+    <div class="form-group">
+    <label>Δικαιώμα: </label>
+    <select formControlName="role" (change)="selectRights($event)">
+      <option value="">Επιλογή</option>
+      <option value="admin">Διαχειριστλης</option>
+      <option value="supervision">Προιστάμενος</option>
+      <option value="subsistent">Υφιστάμενος</option>
+      <option value="user">Φοιτητης</option>
+    </select>
+  </div>
+    <button class="btn btn-success">Ενημέρωση</button>
+  </form>
+</div>

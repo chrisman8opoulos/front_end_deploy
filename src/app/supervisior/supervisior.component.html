@@ -1,0 +1,111 @@
+<div class="col-md-12 user-container">
+  <h2 style="margin: auto"> Τμήμα 1</h2>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Όνομα</th>
+      <th>Επώνυμο</th>
+      <th>Εισόδημα</th>
+      <th>Ανεργοι Γονεις</th>
+      <th>Αδέρφια στην ιδια πόλη</th>
+      <th>Σε άλλη πόλη</th>
+      <th>Χρόνια στην εστία</th>
+      <th>Χρόνια που σπυδάζει</th>
+      <th>Μόρια</th>
+      <th>Εγκρίνεται</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let dep1 of depart1">
+      <td>{{dep1.firstName}}</td>
+      <td>{{dep1.lastName}}</td>
+      <td>{{dep1.income}}</td>
+      <td>{{dep1.notJob}}</td>
+      <td>{{dep1.brothersSameCity}}</td>
+      <td>{{dep1.brothersAnotherCity}}</td>
+      <td>{{dep1.yearHome}}</td>
+      <td>{{dep1.yearStudy}}</td>
+      <td>{{dep1.finalPoint}}</td>
+      <td>{{dep1.approve}}</td>
+      <td>
+        <button *ngIf="!dep1.approve" class="btn btn-success" (click)="activeRequest(dep1)" style="margin-left: 18px;">Ενεργοποίηση</button>
+        <button *ngIf="dep1.approve" class="btn btn-success" (click)="dActiveRequest(dep1)" style="margin-left: 18px;">Απενεργοποίηση</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<div class="col-md-12 user-container">
+  <h2 style="margin: auto"> Τμήμα 2</h2>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Όνομα</th>
+      <th>Επώνυμο</th>
+      <th>Εισόδημα</th>
+      <th>Ανεργοι Γονεις</th>
+      <th>Αδέρφια στην ιδια πόλη</th>
+      <th>Σε άλλη πόλη</th>
+      <th>Χρόνια στην εστία</th>
+      <th>Χρόνια που σπυδάζει</th>
+      <th>Μόρια</th>
+      <th>Εγκρίνεται</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let dep2 of depart2">
+      <td>{{dep2.firstName}}</td>
+      <td>{{dep2.lastName}}</td>
+      <td>{{dep2.income}}</td>
+      <td>{{dep2.notJob}}</td>
+      <td>{{dep2.brothersSameCity}}</td>
+      <td>{{dep2.brothersAnotherCity}}</td>
+      <td>{{dep2.yearHome}}</td>
+      <td>{{dep2.yearStudy}}</td>
+      <td>{{dep2.finalPoint}}</td>
+      <td>{{dep2.approve}}</td>
+      <td>
+        <button *ngIf="!dep2.approve" class="btn btn-success" (click)="activeRequest(dep2)" style="margin-left: 18px;">Ενεργοποίηση</button>
+        <button *ngIf="dep2.approve" class="btn btn-success" (click)="dActiveRequest(dep2)" style="margin-left: 18px;">Απενεργοποίηση</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<div class="col-md-12 user-container">
+  <h2 style="margin: auto"> Τμήμα 3</h2>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Όνομα</th>
+      <th>Επώνυμο</th>
+      <th>Εισόδημα</th>
+      <th>Ανεργοι Γονεις</th>
+      <th>Αδέρφια στην ιδια πόλη</th>
+      <th>Σε άλλη πόλη</th>
+      <th>Χρόνια στην εστία</th>
+      <th>Χρόνια που σπυδάζει</th>
+      <th>Μόρια</th>
+      <th>Εγκρίνεται</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let dep3 of depart3">
+      <td>{{dep3.firstName}}</td>
+      <td>{{dep3.lastName}}</td>
+      <td>{{dep3.income}}</td>
+      <td>{{dep3.notJob}}</td>
+      <td>{{dep3.brothersSameCity}}</td>
+      <td>{{dep3.brothersAnotherCity}}</td>
+      <td>{{dep3.yearHome}}</td>
+      <td>{{dep3.yearStudy}}</td>
+      <td>{{dep3.finalPoint}}</td>
+      <td>{{dep3.approve}}</td>
+      <td>
+        <button *ngIf="!dep3.approve" class="btn btn-success" (click)="activeRequest(dep3)" style="margin-left: 18px;">Ενεργοποίηση</button>
+        <button *ngIf="dep3.approve" class="btn btn-success" (click)="dActiveRequest(dep3)" style="margin-left: 18px;">Απενεργοποίηση</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
